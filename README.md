@@ -1,10 +1,10 @@
 # resturant-
 What did i use?    
--Webpack
--html
--css
--javascript
--design this website
+- Webpack
+- html
+- css
+- javascript
+- design this website
 
 issues?      
 
