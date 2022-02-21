@@ -1,45 +1,34 @@
+import '../dist/stylesheet.css'
 
 import navBar from './nav.js';
 import homePage from './home.js';
 import menuPage from './menu.js';
 import contactPage from './contact.js';
-// Elements
 
+
+navBar();
+homePage();
+menuPage();
+contactPage();
+
+// Elements 
 const burger = document.querySelector(".hamburger");
-
+const tabs = document.querySelectorAll('[data-tab-target]');
+const tabContents = document.querySelector('[data-tab-content]');
 //Hamburger menu
 burger.addEventListener("click", () => {
   document.querySelector("ul").classList.toggle("active");
   burger.classList.toggle("toggle");
 });
 
-
-// Tabs
-const tabs = document.querySelectorAll(".my-tabs .tabs li");
-const sections = document.querySelectorAll(".my-tabs .tab-content");
-
 tabs.forEach(tab => {
-  tab.addEventListener("click", e => {
-    e.preventDefault();
-    removeActiveTab();
-    addActiveTab(tab);
-  });
+  tab.addEventListener('click', () => {
+    const target = document.querySelector(tab.dataset.tabTarget)
+    tabContents.forEach(tabContent => {
+      tabContent.classList.remove('active')
+    })
+    target.classList.add('active')
+  })
 })
 
-const removeActiveTab = () => {
-  tabs.forEach(tab => {
-    tab.classList.remove("is-active");
-  });
-  sections.forEach(section => {
-    section.classList.remove("is-active");
-  });
-}
 
-const addActiveTab = tab => {
-  tab.classList.add("is-active");
-  const href = tab.querySelector("a").getAttribute("href");
-  const matchingSection = document.querySelector(href);
-  matchingSection.classList.add("is-active");
-}
-// navBar();
-alert('hello');

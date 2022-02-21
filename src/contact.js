@@ -1,10 +1,11 @@
+
 export default function contactPage(){
   const content = document.querySelector("#content");
   const contact = document.createElement('div');
-  contact.setAttribute('class', 'my-tabs');
+  contact.setAttribute('class', 'tab-content');
   contact.innerHTML = `
   
-      <section class="tab-content" id="contact">
+      <section data-tab-content id="contact">
         <div class="container"> 
           <h3 class="heading">Contact Us</h3>
          <div class="grid-2cols">
@@ -41,7 +42,7 @@ export default function contactPage(){
              </div>
          </div>
            <footer id="footer">
-             <a href=""target="_blank"><ion-icon name="logo-github" class="github-logo"></ion-icon></a>
+             <a href="https://github.com/ZakariyeAden/resturant-"target="_blank"><ion-icon name="logo-github" class="github-logo"></ion-icon></a>
            </footer> 
           </div>
       </section> 
